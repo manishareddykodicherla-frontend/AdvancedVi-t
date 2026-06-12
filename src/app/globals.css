@@ -541,3 +541,12 @@ button:disabled {
     display: none;
   }
 }
+.side-container{
+  display:flex;
+}
+.slickslide > div{
+    margin:0 10px;
+}
+.slicklist{
+    margin: 0 -10px;
+}

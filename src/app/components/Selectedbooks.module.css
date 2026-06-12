@@ -1,0 +1,30 @@
+.selectedbook{
+    display:flex;
+    margin-top:10px;
+    width: calc((100% / 3)*2);
+    background-color:#fbefd6;
+    border-radius:4px;
+    padding:24px;
+    margin-bottom:24px;
+    gap:24px;
+}
+.bookpara{
+    color:#0324b1;
+    width:40%;
+}
+.imagedescription{
+    display:flex;
+    
+
+}
+.image{
+    width:140px;
+    height:140px;
+}
+.subtitle{
+    margin-bottom:10px;
+
+}
+.author{
+    margin-bottom:8px;
+}
