@@ -1,0 +1,79 @@
+"use client"
+import { CiBookmark } from "react-icons/ci";
+import { CiStar } from "react-icons/ci";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { IoMdTime } from "react-icons/io";
+import { FaMicrophone } from "react-icons/fa";
+import { useSelector } from "react-redux"
+import Styles from "./BookDetails.module.css"
+import React from 'react'
+import { useDispatch } from "react-redux";
+import { openAuth } from "@/app/redux/authSlice";
+export default function BookDetails({id}:{id:string}) {
+    const books=useSelector((state:any)=> state.books.allBooks)
+    const book= books.find((item:any)=>item.id.toString()===id);
+    console.log("redux books:",books);
+    console.log("route id:", id);
+    console.log("found book:",book)
+    const dispatch= useDispatch();
+  return (
+    <div>
+         <div className={Styles.book}>
+          <div>
+      <div className={Styles.booktitle}> {book?.title}
+   </div>
+      <div className={Styles.bookauthor}>{book?.author}</div>
+      <div className={Styles.bookSubtitle}>{book?.subTitle}</div>
+      <div className={Styles.ratingswrap}>
+      <div className={Styles.rating}>
+        <div> <span className={Styles.ratingicon }><CiStar /> </span><span>{book?.averageRating} </span>
+      <span>( {book?.totalRating} rating)</span> 
+      </div>
+      <div> <span className={Styles.ratingicon}> <IoMdTime /></span> time</div>
+      </div>
+      <div className={Styles.audiowrap}>
+      <div className="audo">
+       
+         <FaMicrophone />{book?.type}
+         </div>
+         <div className="ideas">
+          <span className={Styles.ratingicon}> <HiOutlineLightBulb /> </span>keyideas{book?.keyIdeas}</div>     
+           </div>
+           </div>
+      <div className={Styles.buttons}>
+        <button className={Styles.readbutton} onClick={()=>{dispatch(openAuth())}}>Read</button>
+        
+          <button className={Styles.readbutton} onClick={()=>{dispatch(openAuth())}}><FaMicrophone />  Listen</button>
+        
+        
+      </div>
+      <div className={Styles.libraryadd} onClick={()=>{dispatch(openAuth())}}> 
+        <div ><CiBookmark /> </div> 
+        <div>Add title</div>
+        </div>
+      <div className="bookdescription">
+        <div>
+        <h2> What is it about?</h2>
+        <div className={Styles.bookwrapper}>
+        <div className={Styles.elementwrap}> productivity</div> 
+        <div className={Styles.elementwrap}> Personal Developmwnt</div>
+        </div>
+        <div className={Styles.bookdescription}>{book?.bookDescription}</div>
+        </div>
+        
+        <div className="authordescription">
+          <h2> About author</h2>
+          <div className={Styles.bookdescription}>{book?.authorDescription}
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div className={Styles.wrapper}>
+  <img  src={book?.imageLink}  alt="book"  className={Styles.bookimage}/>
+      </div>
+</div>
+    </div>
+    
+  )
+}

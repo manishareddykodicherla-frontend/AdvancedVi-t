@@ -1,7 +1,8 @@
-type Navprops={
-    onLoginClick: ()=> void;
-  }
-export default function Landing({onLoginClick}:Navprops) {
+"use client"
+import { useDispatch } from "react-redux"
+import { openAuth } from "../redux/authSlice";
+export default function Landing() {
+  const dispatch= useDispatch();
   return (
     <div>
         <section id="landing">
@@ -20,7 +21,7 @@ export default function Landing({onLoginClick}:Navprops) {
                 <br className="remove--tablet" />
                 and even people who don’t like to read.
               </div>
-              <button className="btn home__cta--btn" onClick={onLoginClick}>Login</button>
+              <button className="btn home__cta--btn" onClick={()=>dispatch(openAuth())}>Login</button>
             </div>
             <figure className="landing__image--mask">
               <img src="/assets/landing.png" alt="landing" />

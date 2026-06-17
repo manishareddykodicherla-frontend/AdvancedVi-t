@@ -8,6 +8,9 @@
     margin-bottom:24px;
     gap:24px;
 }
+.selected{
+    margin-top:80px;
+}
 .bookpara{
     color:#0324b1;
     width:40%;

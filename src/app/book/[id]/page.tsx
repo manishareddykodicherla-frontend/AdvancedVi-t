@@ -1,7 +1,15 @@
 import React from 'react'
-
-export default function  page() {
+import BookDetails from './BookDetails'
+import Sidebar from '../../components/Sidebar'
+import Styles from "../../globals.css"
+export default async function  page({params,}:{params:Promise<{id:string}>}) {
+  const {id } = await params
   return (
-    <div>this  page</div>
+    <div className="layout">
+    <Sidebar/>
+    <main className="content">
+    <BookDetails  id={id}/>
+    </main>
+    </div>
   )
 }

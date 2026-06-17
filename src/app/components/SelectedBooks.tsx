@@ -9,7 +9,7 @@ export default function SelectedBooks({data}:any) {
     <>
     
     <div>
-<h2> Selected just for you</h2>
+<h2 className={styles.selected}> Selected just for you</h2>
 <div className={styles.selectedbook}>
   <div className="bookpara">
    {data.subTitle}

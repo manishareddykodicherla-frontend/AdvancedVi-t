@@ -1,11 +1,13 @@
 .sidebar{
-width:200px;
-min-height:100vh;
+width:320px;
+left:0;
+top:0;
+height:100vh;
 background:#f7f7f7;
 border-right: 1px solid #e5e7eb;
 display:flex;
 flex-direction:column;
-
+position: fixed;
 
 }
 .nav{
@@ -46,4 +48,9 @@ flex-direction:column;
     display:flex;
     flex-direction:column;
     gap:8px;
+}
+@media(max-width:768px){
+   .layout > .sidebar{
+  display:none;
+}
 }

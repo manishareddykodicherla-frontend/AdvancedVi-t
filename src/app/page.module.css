@@ -47,7 +47,14 @@
   text-wrap: balance;
   color: var(--text-primary);
 }
-
+.header{
+  display:flex;
+  justify-content: flex-end;
+  padding:24px 40px;
+}
+.searchbar{
+  width:360px;
+}
 .intro p {
   max-width: 440px;
   font-size: 18px;

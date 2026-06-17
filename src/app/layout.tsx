@@ -1,7 +1,11 @@
+import ReduxProvider from "./redux/Provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Searchbar from "./components/Searchbar";
+import AuthModal from "./components/AuthModal";
+import Sidebar from "./components/Sidebar";
+import MobileMenu from "./components/MobileMenu";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,7 +28,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+
+      <body>
+        
+       <ReduxProvider>
+        <AuthModal/>
+        <MobileMenu/>
+        <header className="header" >
+        <Searchbar/>
+        </header>
+        
+          {children} 
+        
+          
+          </ReduxProvider>
+
+          </body>
     </html>
   );
 }

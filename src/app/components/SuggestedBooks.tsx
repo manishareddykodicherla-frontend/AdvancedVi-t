@@ -1,5 +1,5 @@
 "use client"
-import Styles  from "./RecommendedBooks.module.css"
+import Styles from "./SuggestedBooks.module.css"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -7,7 +7,8 @@ import { CiTimer } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import Link from "next/link";
 
-export default function RecommendedBooks({recommedbook}:any) {
+
+export default function SuggestedBooks({ suggestedbook}:any) {
   const settings={
     dots:false,
     infinite:true,
@@ -18,14 +19,14 @@ export default function RecommendedBooks({recommedbook}:any) {
   return (
     <div>
       <div> 
-        <h2 className={Styles.heading}> Recommended For You </h2>
+        <h2 className={Styles.heading}> Suggested For You </h2>
         <h4 className={Styles.think}>
           we think you'll like this
         </h4>
       </div>
       <div className={Styles.sliderContainer}>
     <Slider {...settings}>
-      {recommedbook.map((book:any)=>(
+      {suggestedbook.map((book:any)=>(
         <div className={Styles.slideItem} key={book.id}>
             {book.subscriptionRequired &&(<span className={Styles.premium}>Premium</span>)}
           <Link href={`/book/${book.id}`}>
