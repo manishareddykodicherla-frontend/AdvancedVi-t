@@ -1,0 +1,42 @@
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    gap:80px;
+    padding:80px 40px;
+}
+.left{
+    width:360px;
+}
+.left h1{
+    font-size:42px;
+}
+.left span{
+    font-size:16px;
+    font-weight:400; 
+}
+.card{
+    width:420px;
+}
+.input{
+    width:100px;
+    padding:14px;
+    margin-top:12px;
+    border:1 px solid #d1d5db;
+    border-radius:6px;
+}
+.row{
+    display:flex;
+    gap:16px;
+
+}
+.button{
+    width:100%;
+    margin-top:20px;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}

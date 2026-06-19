@@ -9,13 +9,40 @@ import Styles from "./BookDetails.module.css"
 import React from 'react'
 import { useDispatch } from "react-redux";
 import { openAuth } from "@/app/redux/authSlice";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { addSavedBook } from "../../redux/librarySlice";
 export default function BookDetails({id}:{id:string}) {
-    const books=useSelector((state:any)=> state.books.allBooks)
+    const books=useSelector((state:any)=> state.books.allBooks||[])
     const book= books.find((item:any)=>item.id.toString()===id);
+    const [isPlaying,setIsPlaying]=useState(false)
     console.log("redux books:",books);
     console.log("route id:", id);
     console.log("found book:",book)
     const dispatch= useDispatch();
+    const router= useRouter();
+    const isLoggedIn =useSelector((state:any)=>state.auth.isLoggedIn);
+    const isSubscribed=useSelector((state:any)=>state.auth.isSubscribed);
+    const handleListen=()=>{
+      if(!isLoggedIn){
+        dispatch(openAuth());
+        return;
+      }
+      if (book?. subscriptionRequired && !isSubscribed){
+        router.push("/chooseplan");
+        return;
+      }
+      router.push (`/player/${book.id}`)
+    }
+    const handleAddToLibrary=()=>{
+      console.log("Add title clicked")
+      alert("clicked")
+      if (!isLoggedIn){
+        dispatch(openAuth());
+        return;
+      }
+      dispatch(addSavedBook(book))
+    }
   return (
     <div>
          <div className={Styles.book}>
@@ -41,13 +68,18 @@ export default function BookDetails({id}:{id:string}) {
            </div>
            </div>
       <div className={Styles.buttons}>
-        <button className={Styles.readbutton} onClick={()=>{dispatch(openAuth())}}>Read</button>
-        
-          <button className={Styles.readbutton} onClick={()=>{dispatch(openAuth())}}><FaMicrophone />  Listen</button>
-        
+        <button className={Styles.readbutton} onClick={handleListen}>
+          Read
+
+        </button>
+       
+          <button className={Styles.readbutton} onClick={handleListen}>
+            <FaMicrophone />  Listen
+            </button>
+       
         
       </div>
-      <div className={Styles.libraryadd} onClick={()=>{dispatch(openAuth())}}> 
+      <div className={Styles.libraryadd} onClick={handleAddToLibrary}> 
         <div ><CiBookmark /> </div> 
         <div>Add title</div>
         </div>

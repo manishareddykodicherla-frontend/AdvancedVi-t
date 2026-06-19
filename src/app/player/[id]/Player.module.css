@@ -1,0 +1,19 @@
+.player{
+    padding:40px;
+    max-width:900px;
+    margin:0 auto;
+
+}
+.player h1{
+    font-size:32px;
+    margin-bottom:24px;
+
+}
+.player p{
+    font-size:18px;
+    line-height:1.5;
+}
+.audio{
+    width:100px;
+    margin-top:32px;
+}

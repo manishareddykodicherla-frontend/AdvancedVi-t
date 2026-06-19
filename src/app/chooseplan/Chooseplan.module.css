@@ -1,0 +1,19 @@
+.plan{
+    min-height:100vh;
+    background: #032b41;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    padding:40px;
+}
+.button{
+    margin-top:32px;
+    background: #2bd45d;
+    border:none;
+    padding:14px 32px;
+    border-radius:6px;
+    cursor:pointer;
+}

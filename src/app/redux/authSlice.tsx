@@ -3,6 +3,8 @@ const initialState={
     isAuthOpen:false,
     isLoggedIn:false,
     user:null,
+    isSubscribed:false,
+    email:"test@test.com"
 }
  export const authSlice = createSlice({
     name:'auth',
@@ -18,15 +20,18 @@ const initialState={
             state.isLoggedIn=true;
             state.user= action.payload;
             state.isAuthOpen= false;
+            state.email="test@test.com"
 
         },
         logout :(state)=>{
             state.isLoggedIn= false;
             state.user=null;
         },
-
+subscribe:(state)=>{
+    state.isSubscribed=true;
+},
     },
  });
         
-  export const {openAuth,closeauth,login,logout}=authSlice.actions;
+  export const {openAuth,closeauth,login,logout, subscribe}=authSlice.actions;
  export default authSlice.reducer

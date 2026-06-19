@@ -1,0 +1,44 @@
+.content{
+   
+padding:48px;
+width:calc(100%-20px);
+margin-left:320px;
+}
+.wrapper{
+    text-align:center;
+}
+.imagewrap{
+ width:300px;
+}
+.button{
+text-align: center;
+   background-color: #2bd97c;
+  color:#032b41;
+   width:50%;
+    height:40px;
+   border-radius:5px;
+    font-size: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin:10px;
+}
+.settingContainer{
+    margin-left:320px;
+}
+.title{
+    font-size:40px;
+    border-bottom: 1px solid rgb(230, 223, 223);
+    padding:40px;
+    margin-left: 0px;
+
+}
+.subTitle{
+     font-size:14px;
+     
+}
+.plandetails{
+        border-bottom: 1px solid rgb(230, 223, 223);
+    padding:40px;
+
+}

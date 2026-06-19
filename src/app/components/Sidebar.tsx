@@ -1,6 +1,8 @@
 "use client"
-import { openAuth } from '../redux/authSlice';
-import { useDispatch } from 'react-redux';
+import { openAuth, logout } from '../redux/authSlice';
+import { useSelector,useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
+import {Rootstate} from "../redux/store"
 import Link from "next/link";
 import  {
     FiHome,
@@ -14,6 +16,12 @@ import  {
 import styles from "./Sidebar.module.css";
 export default function Sidebar() {
   const dispatch= useDispatch();
+  const router= useRouter();
+  const isLoggedIn= useSelector((state:Rootstate)=>state.auth.isLoggedIn);
+  const handleLogout=()=>{
+    dispatch(logout());
+    router.push("/")
+  }
   return (
     <aside className={styles.sidebar} >
         <div className={styles.logo}>
@@ -36,13 +44,20 @@ export default function Sidebar() {
            <div className={styles.navItem}>
             <FiSearch /> <span>Search</span>
             </div>
+            <Link href="/Settings">
            <div className={styles.navItem}>
             <FiSettings />
             <span>Settings</span>
            </div>
+           </Link>
            <div className={styles.navItem}><FiHelpCircle /> <span>Help</span></div>
-           <div className={styles.navItem} onClick={()=>{dispatch(openAuth())}}><FiLogIn /> <span>Login</span></div>
-        
+           { isLoggedIn ?(
+            <div className={styles.navItem} onClick={handleLogout}>
+<FiLogIn /><span> Logout</span>
+            </div>
+           ):(
+           <div className={styles.navItem} onClick={()=>{dispatch(openAuth())}}><FiLogIn /> <span>Login</span></div>)
+           }
       </nav>
     
     </aside>

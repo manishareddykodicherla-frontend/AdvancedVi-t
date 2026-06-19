@@ -26,7 +26,7 @@ export default function SuggestedBooks({ suggestedbook}:any) {
       </div>
       <div className={Styles.sliderContainer}>
     <Slider {...settings}>
-      {suggestedbook.map((book:any)=>(
+      {suggestedbook?.map((book:any)=>(
         <div className={Styles.slideItem} key={book.id}>
             {book.subscriptionRequired &&(<span className={Styles.premium}>Premium</span>)}
           <Link href={`/book/${book.id}`}>
