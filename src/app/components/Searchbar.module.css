@@ -9,6 +9,12 @@
       width:100%;
     padding:16px;
     box-sizing: border-box;
+    background-color: #fff;
+    height:50px;
+    z-index:1;
+    border-bottom: 1 px solid #e1e7ea;
+    margin-top:20px;
+    border-radius:5px;
 
 }
 .searchWrapper{
@@ -42,7 +48,7 @@
     gap:5px;
 }
 @media (max-width:768px) {
-    .search{
+    .searching{
         display:none;
     }
 }

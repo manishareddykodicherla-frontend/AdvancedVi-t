@@ -7,7 +7,7 @@ import SelectedBooks from "../components/SelectedBooks";
 import StoreBooks from "../components/StoreBooks"
 import Styles from "../globals.css"
 import Searchbar from "../components/Searchbar";
-
+import Style from "./ForYou.module.css"
 async function apiSelectedBooks(){
     const response= await fetch("https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected")
     const data=await response.json();
@@ -44,7 +44,7 @@ const allBooks=[ data,...recommedbook,... suggestedbook]
             <div className="layout">
         <Sidebar/>
 
-        <main className= "content">
+        <main className="content">
             <StoreBooks allBooks={allBooks}/>
         <Link href={`/book/${data.id}`}>
         <div>

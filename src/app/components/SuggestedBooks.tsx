@@ -15,6 +15,15 @@ export default function SuggestedBooks({ suggestedbook}:any) {
     speed:500,
     slidesToShow:5,
     slidesToScroll:1,
+    responsive:[
+      {
+        breakpoint:768,
+        settings:{
+          slidesToShow:1,
+          slidesToScroll:1,
+        }
+      }
+    ]
   }
   return (
     <div>

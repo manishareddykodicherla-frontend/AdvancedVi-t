@@ -586,9 +586,7 @@ button:disabled {
     cursor:pointer;
 
   }
-  .header{
-    display:none;
-  }
+  
   
 .content{
   margin-left:0;
@@ -608,10 +606,12 @@ button:disabled {
   background:white;
   z-index:2000;
 }
-.layout > aside {
-display:none;
-}
+
 .nav__list--wrapper{
+  display:none;
+}
+
+.layout{
   display:none;
 }
 }

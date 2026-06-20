@@ -31,3 +31,11 @@
 .author{
     margin-bottom:8px;
 }
+@media (max-width:768px){
+    .selectedbook{
+        width:100%;
+        flex-direction: column;
+        gap:20px;
+        display: block;
+    }
+}

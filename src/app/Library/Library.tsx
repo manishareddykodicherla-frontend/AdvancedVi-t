@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { Rootstate } from "../redux/store";
 import { openAuth } from "../redux/authSlice";
 import Styles from "./Library.module.css"
+import Link from "next/link";
 export default function Library() {
     const dispatch=useDispatch();
     const isLoggedIn = useSelector((state:Rootstate)=>state.auth.isLoggedIn);
@@ -44,11 +45,13 @@ export default function Library() {
             ):(
                 
                 savedBooks.map((book:any)=>(
+                    <Link href={`/book/${book.id}`} >
                     <div key={book.id}>
                         <img src={book.imageLink} alt={book.title} width={80}/>
                         <h5>{book.title}</h5>
                         <p>{book.author}</p>
                     </div>
+                    </Link>
                   
                 )
                 )
