@@ -28,7 +28,7 @@ position: fixed;
 .navItem{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
     padding:12px;
     border-radius:6px;
     font-size:15px;

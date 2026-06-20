@@ -40,3 +40,12 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 }
+@media (max-width:786px) {
+    .container{
+display: flex;
+flex-direction:column
+    }
+    .button{
+        width:90px;
+    }
+}

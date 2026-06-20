@@ -76,8 +76,6 @@ font-size:18px
     display:flex;
 
     gap:15px;
-  
-
 margin-top:20px;
 }
 .elementwrap{
@@ -107,4 +105,18 @@ margin-top:20px;
     width:100%;
     height:440px;
     object-fit:cover;
+}
+@media (max-width:786px){
+    .book{
+        display:flex;
+        flex-direction: column-reverse;
+    }
+    .bookimage{
+    width:320px;
+    height:320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 }
