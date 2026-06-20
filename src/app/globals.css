@@ -48,7 +48,11 @@ button:disabled {
   padding: 40px 0;
   width: 100%;
 }
-
+.header{
+  display:flex;
+  justify-content: flex-end;
+  padding:24px 40px;
+}
 .btn {
   background-color: #2bd97c;
   color: #032b41;

@@ -2,7 +2,6 @@ import ReduxProvider from "./redux/Provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Searchbar from "./components/Searchbar";
 import AuthModal from "./components/AuthModal";
 import Sidebar from "./components/Sidebar";
 import MobileMenu from "./components/MobileMenu";
@@ -34,9 +33,7 @@ export default function RootLayout({
        <ReduxProvider>
         <AuthModal/>
         <MobileMenu/>
-        <header className="header" >
-        <Searchbar/>
-        </header>
+    
         
           {children} 
         

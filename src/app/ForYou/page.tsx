@@ -6,6 +6,8 @@ import Link from "next/link";
 import SelectedBooks from "../components/SelectedBooks";
 import StoreBooks from "../components/StoreBooks"
 import Styles from "../globals.css"
+import Searchbar from "../components/Searchbar";
+
 async function apiSelectedBooks(){
     const response= await fetch("https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected")
     const data=await response.json();
@@ -35,6 +37,9 @@ const suggestedbook= await apiSuggestedBooks();
 const allBooks=[ data,...recommedbook,... suggestedbook]
   return (
     <div>
+        <header className="header">
+        <Searchbar/>
+        </header>
         <div className="side-container">
             <div className="layout">
         <Sidebar/>
