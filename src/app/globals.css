@@ -476,7 +476,7 @@ button:disabled {
 }
 .content{
   flex:1;
-  margin-left:290px;
+  margin-left:320px;
   padding:32px;
 }
 .burger{
@@ -611,9 +611,9 @@ button:disabled {
   display:none;
 }
 
-.layout{
+/* .layout{
   display:none;
-}
+} */
 }
 
 @media (max-width: 576px) {

@@ -1,56 +1,100 @@
-.sidebar{
-width:320px;
-left:0;
-top:0;
-height:100vh;
-background:#f7f7f7;
-border-right: 1px solid #e5e7eb;
-display:flex;
-flex-direction:column;
-position: fixed;
+.sidebar {
+  width: 320px;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: #f7f7f7;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  transition: transform 250ms ease;
+}
 
+.nav {
+  flex: 1;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.nav{
-    flex:1;
-    margin-top:20px;
-    padding :10px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-evenly;
 
+.logo img {
+  width: 150px;
+  margin-bottom: 15px;
+  margin-top: 28px;
 }
-.logo img{
-    width:150px;
-    margin-bottom:15px;
-    margin-top:28px;
 
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #4b5563;
+  cursor: pointer;
 }
-.navItem{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:12px;
-    border-radius:6px;
-    font-size:15px;
-    color:#4b5563;
-    cursor:pointer;
+
+.navItem:hover {
+  background: #eeeeee;
 }
-.navItem:hover{
-    background:#eeeeee
+
+.active {
+  color: #c8ecd5;
+  border-left: 4px solid #a1d8b6;
+  background: white;
 }
-.active{
-    color:#c8ecd5;
-    border-left:4px solid #a1d8b6;
-    background:white;
-    
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.bottom{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+
+.burger {
+  display: none;
 }
-@media(max-width:768px){
-   .layout > .sidebar{
-  display:none;
+
+.overlay {
+  display: none;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    z-index: 2000;
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 2100;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 6px;
+    font-size: 22px;
+    color: #032b41;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1500;
+  }
 }

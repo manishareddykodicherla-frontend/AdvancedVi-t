@@ -1,54 +1,78 @@
-.search{
-    position: relative;
-        margin-bottom:20px;
+.search {
+  position: relative;
+  margin-bottom: 20px;
 }
-.searching{
-    position:absolute;
-    top:0px;
-    right:0px;
-      width:100%;
-    padding:16px;
-    box-sizing: border-box;
-    background-color: #fff;
-    height:50px;
-    z-index:1;
-    border-bottom: 1 px solid #e1e7ea;
-    margin-top:20px;
-    border-radius:5px;
+.searching {
+  position: absolute;
+  top: 0px;
+  right:0px;
+  width: 420px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 50px;
+  z-index: 1;
+  border-bottom: 1px solid #e1e7ea;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+.searchResults {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 650px;
+  max-width: 90vw;
+  background: white;
+  box-shadow: 0 4px 15px rgba(235, 231, 231, 0.916);
+  z-index: 100;
+}
+.searchItem {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  border-bottom: 1px solid white;
+}
+.bookImage {
+  width: 100px;
+  height: 130px;
+  object-fit: cover;
+}
+.time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-}
-.searchWrapper{
-    position:relative;
-    width:420px;
+.searchWrapperContainer {
+  position: relative;
+  width: 90%;
+  max-width: 90%;
 }
 
-    .searchResults{
-        position :absoulte;
-        top:60px;
-        right:0;
-        width:650px;
-        background:white;
-        box-shadow:0 4px 15px rgba(235, 231, 231, 0.916);
-        z-index:100;
-    }
-.searchItem{
-    display:flex;
-    gap:24px;
-    padding:24px;
-    border-bottom:1px solid white;
-}
-.bookImage{
-    width:100px;
-    height:130px;
-    object-fit:cover;
-}
-.time{
-    display:flex;
-    align-items: center;
-    gap:5px;
-}
-@media (max-width:768px) {
-    .searching{
-        display:none;
-    }
+@media (max-width: 768px) {
+  .searchWrapper {
+    width: 100%;
+  }
+  .searching {
+    display: block;
+    width:100%;
+  }
+  .searchResults {
+    width: 100vw;
+    right: -16px;
+    max-width: none;
+  }
+  .searchItem {
+    padding: 12px;
+    gap: 12px;
+  }
+  .bookImage {
+    width: 70px;
+    height: 90px;
+  }
 }
