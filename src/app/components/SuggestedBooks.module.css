@@ -77,3 +77,10 @@
     margin-bottom:50px;
 
 }
+@media (max-width: 768px) {
+  .selectedbook {
+    width: 100%;
+    gap: 24px;
+    flex-direction: column;
+  }
+}
