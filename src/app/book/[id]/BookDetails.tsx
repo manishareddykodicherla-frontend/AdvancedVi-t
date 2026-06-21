@@ -25,6 +25,7 @@ export default function BookDetails({id}:{id:string}) {
     const isLoggedIn =useSelector((state:any)=>state.auth.isLoggedIn);
     const isSubscribed=useSelector((state:any)=>state.auth.isSubscribed);
     const handleListen=()=>{
+      console.log("subscriptionRequired=",book?.subscriptionRequired);
       if(!isLoggedIn){
         dispatch(openAuth());
         return;
@@ -33,7 +34,7 @@ export default function BookDetails({id}:{id:string}) {
         router.push("/chooseplan");
         return;
       }
-      router.push (`/player/${book.id}`)
+      router.push(`/player/${book.id}`)
     }
     const handleAddToLibrary=()=>{
       console.log("Add title clicked")
