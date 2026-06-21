@@ -1,7 +1,8 @@
 import Stripe from "stripe";
-import {NextResponse} from "next/server";
+import { NextResponse } from "next/server";
 
-const stripe= new Stripe(process.env.STRIPE_SECREST_KEY as string
+console.log("KEY=",process.env.STRIPE_SECRET_KEY);
+const stripe= new Stripe(process.env.STRIPE_SECRET_KEY as string
 );
 
 
