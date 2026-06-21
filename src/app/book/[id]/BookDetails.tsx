@@ -12,7 +12,7 @@ import { openAuth } from "@/app/redux/authSlice";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { addSavedBook } from "../../redux/librarySlice";
-import Link from "next/link";
+
 export default function BookDetails({id}:{id:string}) {
     const books=useSelector((state:any)=> state.books.allBooks||[])
     const book= books.find((item:any)=>item.id.toString()===id);
@@ -70,7 +70,7 @@ export default function BookDetails({id}:{id:string}) {
            </div>
            </div>
            
-           <Link href="/chooseplan">
+           
 
       <div className={Styles.buttons}>
            
@@ -85,7 +85,7 @@ export default function BookDetails({id}:{id:string}) {
        
         
       </div>
-      </Link>
+  
       <div className={Styles.libraryadd} onClick={handleAddToLibrary}> 
         <div ><CiBookmark /> </div> 
         <div>Add title</div>
