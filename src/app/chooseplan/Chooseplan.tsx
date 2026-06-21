@@ -20,6 +20,14 @@ export default function Chooseplan() {
         router.push("/ForYou");
     };
     const [showAnswer,setShowAnswer]=useState(true);
+    const handleCheckout= async ()=>{
+        console.log("checkout clicked");
+        const response= await fetch("/api/checkout",{method:"POST"});
+        console.log("response",response)
+        const data =await response.json();
+        console.log("stripe data", data)
+        window.location.href= data.url;
+    }
   return (
 <div>
     <main className={Styles.plan}>
@@ -59,7 +67,7 @@ export default function Chooseplan() {
         </div>
     </div>
 
-        <button onClick={()=>router.push("/payment")} className={Styles.button}> Start your free 7-day trial</button>
+        <button onClick={handleCheckout} className={Styles.button}> Start your free 7-day trial</button>
         <p className={Styles.note}>
             Cancel your trail at any time before it ends, and you won't be charged.
         </p>
