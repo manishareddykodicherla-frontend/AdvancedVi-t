@@ -44,7 +44,7 @@ export default function RecommendedBooks({ recommedbook }: any) {
               {book.subscriptionRequired && (
                 <span className={Styles.premium}>Premium</span>
               )}
-              <Link href={ book.subscriptionRequired?"/chooseplan":`/book/${book.id}`}>
+              <Link href={book.subscriptionRequired?"/chooseplan":`/book/${book.id}`}>
                 <div className={Styles.bookmap}>
                   <div className="bookimage">
                     <figure>
