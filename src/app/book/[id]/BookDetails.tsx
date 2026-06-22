@@ -6,13 +6,11 @@ import { IoMdTime } from "react-icons/io";
 import { FaMicrophone } from "react-icons/fa";
 import { useSelector } from "react-redux"
 import Styles from "./BookDetails.module.css"
-import React from 'react'
 import { useDispatch } from "react-redux";
 import { openAuth } from "@/app/redux/authSlice";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { addSavedBook } from "../../redux/librarySlice";
-
 export default function BookDetails({id}:{id:string}) {
     const books=useSelector((state:any)=> state.books.allBooks||[])
     const book= books.find((item:any)=>item.id.toString()===id);
@@ -30,11 +28,13 @@ export default function BookDetails({id}:{id:string}) {
         dispatch(openAuth());
         return;
       }
-      if (book?. subscriptionRequired && !isSubscribed){
+      if (book?. subscriptionRequired){
         router.push("/chooseplan");
         return;
       }
-      router.push(`/player/${book.id}`)
+      else{
+      router.push(`/player/${book.id}`)}
+      return;
     }
     const handleAddToLibrary=()=>{
       console.log("Add title clicked")
