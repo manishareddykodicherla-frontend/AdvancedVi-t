@@ -106,7 +106,7 @@ margin-top:20px;
     height:440px;
     object-fit:cover;
 }
-@media (max-width:786px){
+@media (max-width:768px){
     .book{
         display:flex;
         flex-direction: column-reverse;

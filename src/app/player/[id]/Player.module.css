@@ -17,3 +17,34 @@
     width:100px;
     margin-top:32px;
 }
+.controls{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:24px;
+    margin-top:24px;
+}
+.controls button{
+    border:none;
+    background:none;
+    font-size:36px;
+    cursor:pointer;
+}
+@media (max-width:768px){
+    .player{
+        padding:24px 16px;
+    }
+    .player h1{
+        font-size:24px;
+    }
+    .player p{
+        font-size:14px;
+        line-height:1.5;
+    }
+    .controls{
+        gap:18px;
+    }
+    .controls button{
+        font-size:32px; 
+    }
+}

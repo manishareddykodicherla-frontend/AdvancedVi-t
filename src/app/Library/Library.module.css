@@ -74,3 +74,23 @@ object-fit:cover;
 border-radius:4px;
 
 }
+@media(max-width:768px){
+    .library{
+        padding:24px 16px;
+    }
+    .library h1{
+        font-size:28px;
+    }
+    .savedBooks{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:20px;
+    }
+    .book{
+        width:100%;
+    }
+    .boook img{
+        width:100%;
+        max-width:160px;
+    }
+}
