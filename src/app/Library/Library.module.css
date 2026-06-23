@@ -75,22 +75,47 @@ border-radius:4px;
 
 }
 @media(max-width:768px){
-    .library{
-        padding:24px 16px;
+    .savedBooksSection{
+        margin-left:0 !important;
+        width:100% !important;
+        padding: 90px 15px 24px !important;
+        box-sizing:border-box;
     }
-    .library h1{
+    .savedTitle{
         font-size:28px;
+        line-height:1.5;
     }
-    .savedBooks{
-        display:grid;
-        grid-template-columns: 1fr;
-        gap:20px;
+    .savedCount{
+        font-size:14px;
     }
-    .book{
+    .savedGrid{
         width:100%;
+        display:flex;
+        flex-direction:column;
+        gap: 20px;
+
     }
-    .boook img{
+    .savedCard{
         width:100%;
-        max-width:160px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .savedImage{
+        width:180px;
+        height:auto;
+        object-fit:cover;
+    }
+    .emptyState{
+        width:100%;
+        text-align:center;
+        padding: 41px 15px;
+    }
+    .emptyTitle{
+        font-size:20px;
+    }
+    .emptyText{
+        font-size:14px;
     }
 }

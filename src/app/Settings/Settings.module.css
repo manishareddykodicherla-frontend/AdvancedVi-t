@@ -43,21 +43,50 @@ margin:10px;
 
 }
 @media (max-width:768px){
-.settings{
-    padding:24px 16px;
+.content{
+    margin-left:0;
+    width:100%;
+    padding: 90px 20px 24px;
+    box-sizing: border-box;
 }
-.settings h1{
-    font-size:32px;
-}
-.section{
-    padding:20px 0;
+.wrapper{
+    text-align: center;
 
+}
+.imagewrap{
+    width:220px;
+    max-width:100%;
+}
+.text{
+    font-size:28px;
+    line-height:1.5;
+    max-width:320px;
+    margin:20px auto;
+    text-align:center;
+}
+.settingContainer{
+    margin-left:0;
+    width:100%;
+    padding:90px 20px 24px;
+    box-sizing: border-box;
+}
+.title{
+    font-size:32px;
+    padding:24px 0;
+    margin-left:0;
+
+}
+.plandetails{
+    padding: 24px 0;
 }
 .button{
     width:100%;
+    max-width:320px;
+    margin:18px 0px;
 }
 .email{
-    font-size:16px;
+    font-size:18px;
     word-break:break-word;
+
 }
 }
